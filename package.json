@@ -23,6 +23,7 @@
     "morgan": "^1.10.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "vite": "^7.3.1"
   }
 }
