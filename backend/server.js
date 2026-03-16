@@ -53,9 +53,11 @@ app.use(async (req, res, next) => {
 app.use("/api/products", productRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  const frontendPath = path.join(__dirname, "../frontend/dist");
+
+  app.use(express.static(frontendPath));
   app.get("/*splat", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(frontendPath, "index.html"));
   });
 }
 
