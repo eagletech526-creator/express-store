@@ -54,7 +54,11 @@ app.use("/api/products", productRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
+<<<<<<< HEAD
   app.get("/*splat", (req, res) => {
+=======
+  app.use((req, res) => {
+>>>>>>> 21e9bb4e43a660afcaab87b68372181f34555bfa
     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   });
 }
